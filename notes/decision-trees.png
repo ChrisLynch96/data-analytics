@@ -1,0 +1,41 @@
+<h1 id="decision-tree-notes">Decision Tree notes</h1>
+<ul>
+<li>A simpler model built from a large dataset will perform better than a complex model built with a small dataset.</li>
+</ul>
+<h2 id="overfitting">Overfitting</h2>
+<ul>
+<li>Model is built to exactly match (perfectly predict) the dataset being used for training. Model reflects the noise in the dataset more than it does the relationship between independent and dependent variables.</li>
+<li>Would generate different responses for similar datasets.</li>
+</ul>
+<h2 id="underfitting">Underfitting</h2>
+<ul>
+<li>Model lacking sufficient training that it doesn’t understand anything about the dataset and makes random, incoherent, predictions.</li>
+<li>Would generate different responses for similar datasets</li>
+</ul>
+<h2 id="overfitting-solutions">Overfitting solutions</h2>
+<ul>
+<li>Cross Validation</li>
+<li>Regularisation</li>
+<li>Ensemble Learning</li>
+</ul>
+<h3 id="cross-validation">Cross validation</h3>
+<p>Splitting the data into <strong>k</strong> subsets.</p>
+<ul>
+<li>Model selection technique</li>
+<li>A good model is one which performs well on an unseen dataset i.e Something other than the training set</li>
+</ul>
+<p>Workflow:</p>
+<ul>
+<li>Split the data into multiple subsets</li>
+<li>Keep some data aside to validate the performance of the model - Validation</li>
+</ul>
+<p>Example(4-fold cross validation)</p>
+<ol type="1">
+<li>Split the data into 4 subsets</li>
+<li>Take one of the subsets as the testing dataset. The other 3 subsets are the training datasets</li>
+<li>Train your model and validate against the testing subset</li>
+<li>repeat steps one to three using a different subset as the testing set each time</li>
+</ol>
+<h3 id="regularisation">Regularisation</h3>
+<p>Penalises models that are too complex</p>
+<p>E(New Model) = E(Model) + Reg(COmplexity)</p>
