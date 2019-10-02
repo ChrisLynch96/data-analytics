@@ -46,6 +46,14 @@ E(New Model) = E(Model) + $\alpha$Reg(Complexity)
 
 A form of regression that shrinks the coefficient estimates towards zero. For a refresher on regression just go down [below](#Regression-refresher)
 
+Some common regularization algorithms are *adjusted R-square* and *Lasso regression*
+
+### Ensemble Learning
+
+Real simple, take various different models, train them on the data, and combine the results
+
+Works because the overfitting component of various models cancel each other when combined
+
 ### (brief) Regression refresher
 
 Technique used to describe a relationship between a dependent variable and one or more independent variables
