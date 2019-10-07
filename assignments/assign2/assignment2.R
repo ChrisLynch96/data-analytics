@@ -53,6 +53,7 @@ models[[counter]] = model9
 # Ending for loop to write the list of models to a pdf file
 pdf("models.pdf", onefile = TRUE)
 for (i in seq(length(models))) {
+  printcp(models[[i]])
   plot(as.party(models[[i]]))
 }
 dev.off()
