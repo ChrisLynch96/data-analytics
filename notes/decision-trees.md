@@ -40,7 +40,7 @@ Example(4-fold cross validation)
 
 ### Regularisation
 
-Penalises models that are too complex
+Penalises models that are too complex e.g high number of branches in decision tree or highest degree of a polynomial in regression analysis
 
 E(New Model) = E(Model) + $\alpha$Reg(Complexity)
 
@@ -88,3 +88,21 @@ I should mention that this is called the least squares method
 I should also mention that your x and y values will be coming from your training data
 
 There are many forms of regression but this should give an idea of how regression functions
+
+# Additional Notes
+
+## R-Squared
+
+$R^2 = 1 - \frac{Explained Variation}{Total Variation}$
+
+A measure of how close the data is to the fitted regression line
+
+Whereas correlation explains the strength of the relationship between an independent and dependent variable. R-Square explains to what extent variance in one variable explains variance in the second variable.
+
+For example is the $R^2$ value of a model is 0.5 than approximately half of the observed variation can be explained by the model's inputs.
+
+The higher the R-Square value the better the model fit (in general but this is not always the case)
+
+Cannot assess whether the coefficient estimates and the predictions are biased --> Look at residual plots for this.
+
+## Residuals
