@@ -51,13 +51,39 @@ Some common regularization algorithms are *adjusted R-square* and *Lasso regress
 
 #### Adjusted R-square
 
+Since R-square is always positive and always increases as the number of terms in a model increases, it can be misleading as to the correctness of your model.
 
+*Adjusted R-square* Increases only if the new term improves the model more than would be expected by chance.
+
+Decreases when a predictor improves the model than less than would be expected by chance
+
+Can be negative
+
+#### Lasso Regression
+
+A shrinkage model that attempts to shrink the data points towards a central point, like the mean.
+
+Meant to encourage simple, sparse models.
 
 ### Ensemble Learning
 
 Real simple, take various different models, train them on the data, and combine the results
 
 Works because the overfitting component of various models cancel each other when combined
+
+Various kinds of Ensemble learning could be
+
+* Using different techniques for model creation
+* Using different training datasets
+* Using different IVs
+* Using different model parameters
+
+IV: fairly sure this is referring to *individual variables*. This is something like the $\alpha$ value used in regularisation to penalise overly complex models.
+
+So what's the result of Ensemble learning?
+
+* the most common outcome between all the different models (discrete outcome)
+* The average of the outcomes of the different models (continuous outcome)
 
 ### (brief) Regression refresher
 
