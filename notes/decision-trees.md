@@ -12,6 +12,7 @@
 
 * Model lacking sufficient training that it doesn't understand anything about the dataset and makes random, incoherent, predictions.
 * Would generate different responses for similar datasets
+* A model that fails to understand the underlying trends in the data
 
 ## Overfitting solutions
 
@@ -47,6 +48,10 @@ E(New Model) = E(Model) + $\alpha$Reg(Complexity)
 A form of regression that shrinks the coefficient estimates towards zero. For a refresher on regression just go down [below](#Regression-refresher)
 
 Some common regularization algorithms are *adjusted R-square* and *Lasso regression*
+
+#### Adjusted R-square
+
+
 
 ### Ensemble Learning
 
@@ -105,4 +110,14 @@ The higher the R-Square value the better the model fit (in general but this is n
 
 Cannot assess whether the coefficient estimates and the predictions are biased --> Look at residual plots for this.
 
-## Residuals
+## Residual plots
+
+Can be used to access whether the observed error is consistent with the stochastic error.
+
+stochastic is just a fancy way of saying random.
+
+there are two parts to your model: deterministic and stochastic. Deterministic being the predictive part and the stochastic part being the rest. The radom error.
+
+Looking at a residual plot the values should be symmetrically and randomly distributed with a mean of zero. There should be no predictive value in the plot. e.g I should not be able to say with confidence that x = 5 will produce a positive value.
+
+If you get a non-random residual plot it is an indication that the deterministic part of your model is not capturing som explanatory information that is "leaking into the residuals" e.g a missing variable, higher-order term etc.
