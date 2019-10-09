@@ -32,3 +32,11 @@ model_pruned <- prune.rpart(model2, cp)
 plot(as.party(model_pruned))
 
 # Building a decision tree via the random forest method
+RF <- randomForest(RESPONSE~.,data=Data)
+print(RF)
+
+importance(RF)
+
+varImpPlot(RF)
+
+plot(RF)
