@@ -1,12 +1,12 @@
-rm(list=ls())
-setwd("XXX")
-Data <- read.csv("RT.csv", header=TRUE, sep=";")
-Data
-install.packages ("partykit")
-install.packages ("party")
 library("partykit")
 library("rpart")
 library("party")
+
+rm(list=ls())
+setwd("~/workspace/github.com/ChrisLynch96/data-analytics/labs/lab4")
+
+Data <- read.csv("RT.csv", header=TRUE, sep=";")
+Data
 attach(Data)
 RTModel <- rpart(Weight ~ Height, method="anova", 
                  control=rpart.control(minsplit=5, minbucket=2, maxdepth=4))
