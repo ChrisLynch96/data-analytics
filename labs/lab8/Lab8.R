@@ -40,6 +40,17 @@ generate_pdfs <- function(samples, lambda) {
   return(pdfs)
 }
 
+ks_testing <- function(samples) {
+  results <- rep(NA, length(samples))
+  
+  for(i in 1:length(samples)) {
+    ks_result <- ks.test(samples[[i]], "pexp")
+    results[i] <- ks_result$p.value
+  }
+  
+  return(results)
+}
+
 # main
 
 set.seed(124)
@@ -57,5 +68,9 @@ sample_pdfs <- generate_pdfs(samples, lambda)
 # Testing the pdf of the exponetial distribution sample is correct
 plot(x = samples[[1]], y = sample_pdfs[[1]], xlab = "x", ylab = "Probability density", type = "p")
 
+# kolmogorov smirnov test
+result <- ks.test(samples[[1]], "pexp")
+print(result)
 
+print(result$p.value)
 
