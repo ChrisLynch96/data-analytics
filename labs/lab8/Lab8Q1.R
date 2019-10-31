@@ -69,8 +69,10 @@ sample_pdfs <- generate_pdfs(samples, lambda)
 plot(x = samples[[1]], y = sample_pdfs[[1]], xlab = "x", ylab = "Probability density", type = "p")
 
 # kolmogorov smirnov test
-result <- ks.test(samples[[1]], "pexp")
-print(result)
+results <- ks_testing(samples)
 
-print(result$p.value)
+sprintf("Mean p value from ks test over %d samples: %f", num_samples, mean(results))
+sprintf("Variance of p value from ks test over %d samples: %f", num_samples, var(results))
+sprintf("Max p value from ks test over %d samples: %f", num_samples, max(results))
+sprintf("Min p value from ks test over %d samples: %f", num_samples, min(results))
 
