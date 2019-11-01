@@ -11,36 +11,37 @@ g <- function(x) {
   return(dgamma(x, 5, 2))
 }
 
-M <- function() {
-  f_obvs <- rgamma(5000, 5.5, 3)
-  f_dist <- dgamma(f_obvs, 5.5, 3)
-  
-  g_obvs <- rgamma(5000, 5, 2)
-  g_dist <- dgamma(g_obvs, 5, 2)
-  return(max(f_dist/g_dist))
+M <- function(x_star) {
+  return(f(x_star)/g(x_star))
 }
 
-h <- function(M, g_pdf) {
-  return(M * g_pdf)  
+h <- function(M, gx) {
+  return(M * gx)  
 }
 
 # main
 sample <- rep(NA, 2000)
 
-### Need to generate M such that the max(f(x)/g(x)) doesn't return a massive number
-m <- M()
+x_star <- (5.5-5)/(3-2)
+m <- M(x_star)
 count <- 1
-i <- 1
 
 while(count <= 2000) {
-  xi <- g(i)
-  ui <- runif(1, 0, h(m, i))
+  x <- runif(1, 0, 10)
+  xi <- g(x)
+  ui <- runif(1, 0, h(m, x))
   
-  if(ui <= f(i)) {
-    sample[count] <- xi
+  if(ui <= f(x)) {
+    sample[count] <- x
     count <- count + 1
   }
-  i <- i + 1
 }
 
 sample
+
+hist(sample)
+
+plot(x = sample, y = f(sample), xlab = "x", ylab = "Probability density", type = "p")
+
+ks.test(sample, "pgamma", 5.5, 3)
+
