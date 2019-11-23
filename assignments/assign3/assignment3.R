@@ -15,4 +15,8 @@ library(VIM)
 
 data <- read_excel("Project Data.xlsx")
 
-md.pattern(data)
+miceData <- mice(data, m=5)
+
+miceData <- complete(miceData)
+
+summary(miceData)
