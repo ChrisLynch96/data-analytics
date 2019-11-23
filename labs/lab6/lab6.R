@@ -1,10 +1,9 @@
 library(VIM)
 
+setwd("~/workspace/github.com/ChrisLynch96/data-analytics/labs/lab6")
 rm(list = ls())
 Data <- read.csv("HS.csv", header=TRUE, sep= ",")
-Data
-str(Data)
-attach(Data)
+
 head(Data)
 summary(Data)
 
