@@ -16,7 +16,7 @@ get_average <- function(num_runs, formula, data) {
   cps = rep(NA, num_runs)
   
   for(i in 1:num_runs) {
-    model <- rpart(formula = formula, data = data, method = "class")
+    model <- rpart(formula = formula, data = data, parms=list(split="information"), method = "class")
     opt <- which.min(model$cptable[,"xerror"])
     xerrors[i] <- model$cptable[opt, "xerror"]
     cps[i] <- model$cptable[opt, "CP"]
@@ -24,7 +24,7 @@ get_average <- function(num_runs, formula, data) {
   result <- list(
     mean(xerrors),
     getmode(cps)
-    )
+  )
   
   return(result)
 }
