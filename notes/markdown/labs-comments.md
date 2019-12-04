@@ -62,4 +62,26 @@ Cross validation is a method used for model selection/building whereby the datas
 
 Is the standard deviation of the nodes population
 
+## Lab 3
+
+### apply function (lapply etc.)
+
+apply is essentially the same as the map function in any other language. pass in your matrix, 1 or 2 (row or column), and the function to execute on each piece of data
+
+lapply is executed on a list objects and returns a list object of the same length as the original set.
+
+### Random forrest output
+
+Growing multiple models from randomly selecting subsets of the dataset (bagging) as well as randomly selecting subsets of the features (feature bagging) to use for the model training. These are often referred to as the *weak* models. The goal is to build a strong model from these many weaker models. To do this, the final model is selected using a method of model aggregation, such as taking the modal class at each split, combining the weak models into a stronger one.
+
+![](./markdown/images/random-forest-out.png)
+
+OOB stands for *out of bag*
+
+OOB estimate of the error rate: What is happening here is some data is being maintained for validation, the out of bag data. the amount of miss-classified data is the error rate. Looking at the table above the row indicated the class the data should have been and the column indicated what class the data was predicted to belong to.
+
+#### Importance
+
+Determines the value of splitting on a variable, determined by averaging the decrease in impurity of the model by splitting on that variable over all the models in the random forest. The Predictors/Variables which reduce the amount of impurity/heterogeneity more are deemed to be of a higher importance. For classification, node impurity is measured by the gini index and for regression by the residual sum of squares.
+
 ## Acronyms
