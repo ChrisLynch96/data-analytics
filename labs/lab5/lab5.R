@@ -8,6 +8,8 @@ Data <- read.csv("DI.csv", header=TRUE, sep= ";")
 mean(Data$Post_BP)
 median(Data$Post_BP)
 
+Data$Post_BP
+
 Data$Post_BP[is.na(Data$Post_BP)]
 
 mean(Data$Post_BP[!is.na(Data$Post_BP)])

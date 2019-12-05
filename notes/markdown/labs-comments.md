@@ -84,4 +84,26 @@ OOB estimate of the error rate: What is happening here is some data is being mai
 
 Determines the value of splitting on a variable, determined by averaging the decrease in impurity of the model by splitting on that variable over all the models in the random forest. The Predictors/Variables which reduce the amount of impurity/heterogeneity more are deemed to be of a higher importance. For classification, node impurity is measured by the gini index and for regression by the residual sum of squares.
 
+## Lab 4 regression tree
+
+Will output numeric values instead of discrete categorical values like classification trees.
+
+the constant to predict is based on the average of all values that fall into a subgroup.
+
+for each subset of data, every distinct value of every predictor is used to determine the possible split that could occur that would split the data into two regions $(R_1, R_2)$ such that the overall sums of squared error are minimized:
+
+$minimize{SSE = \sum_{i\in{}R_1} (y_i - \bar{c}_1)^2 + \sum_{i\in{}R_2} (y_i - \bar{c}_2)^2$
+
+The lower the SSE the better the a split is at fitting the trend in the data. It has a lower variance. The opposite is true with a higher SSE
+
+where $y_i$ is the actual value of the target variable and $c_x$ is the mean of the predicted values in a region
+
+A possible split is the average between two consecutive data points.
+
+## Lab 5 data imputation with mean, median and regression
+
+the cbind function takes the columns, the variables/predictors, and combines them into a new data frame. It is short for column bind
+
+the lm function stands for linear model and is used to create simple regression models
+
 ## Acronyms

@@ -23,6 +23,7 @@ str(Data)
 model <-rpart(RESPONSE~., data=Data, control=rpart.control(minsplit=60, minbucket=30, maxdepth=4))
 
 plot(as.party(model))
+print(model)
 
 # Creating second model now purely pruning example
 model2 <- rpart(RESPONSE~., data=Data)
