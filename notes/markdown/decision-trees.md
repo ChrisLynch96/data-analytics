@@ -80,6 +80,22 @@ $I(s_i) = \log \frac{1}{p_i} = -log(p_i)$
 
 Try not to forget that a logarithm is the "The power one must raise a number (the base) to in order to get a number" ie $\log_2 16$ means what value do I raise 2 to in order to get that value 16 (it's 4).
 
+## Gini Impurity
+
+Gini impurity is a measure of how often a randomly chosen element from the set would be incorrectly labeled if it was randomly labeled according to the distribution of labels in the subset.
+
+Can be computed by summing the probability p of an item with label i being chosen times the probability $\sum_{k\neq i} p_k = 1 - p_i$ of a mistake in categorizing that item. It reaches its minimum (zero) when all cases in the node fall into a single category.
+
+$G = \sum_{i=1}^C p(i) * (1-p(i))$ where C is the number of classes.
+
+Weight the left and right side of the splits by the proportion of data they contain and subtract from the pre-split figure to get the overall split
+
+So Algo:
+
+1. Pre-split impurity: $G = \sum_{i=1}^C p(i) * (1-p(i))$
+2. Choose the split with the maximum gini gain
+3. Repeat until tree grown.
+
 ## Overfitting
 
 * Model is built to exactly match (perfectly predict) the dataset being used for training. Model reflects the noise in the dataset more than it does the relationship between independent and dependent variables.

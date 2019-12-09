@@ -92,7 +92,7 @@ the constant to predict is based on the average of all values that fall into a s
 
 for each subset of data, every distinct value of every predictor is used to determine the possible split that could occur that would split the data into two regions $(R_1, R_2)$ such that the overall sums of squared error are minimized:
 
-$minimize{SSE = \sum_{i\in{}R_1} (y_i - \bar{c}_1)^2 + \sum_{i\in{}R_2} (y_i - \bar{c}_2)^2$
+$minimize\{SSE = \sum_{i\in{}R_1} (y_i - \bar{c}_1)^2 + \sum_{i\in{}R_2} (y_i - \bar{c}_2)^2\}$
 
 The lower the SSE the better the a split is at fitting the trend in the data. It has a lower variance. The opposite is true with a higher SSE
 
