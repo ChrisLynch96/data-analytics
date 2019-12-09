@@ -4,7 +4,7 @@
 
 We have some distribution that we wish to sample from, f(x). The problem is that we cannot sample from it. We have a distribution q(x) which we can easily sample from. If the distribution q(x) envelopes f(x) such that all values of f(x) are included in the distribution q(x) then we can sample from q(x) and apply some acceptance/rejection criteria to the samples.
 
-To ensure that the distribution q(x) envelops f(x) we choose a constant scaling factor, m > 1, such that cq(x) > f(x) for all x.
+To ensure that the distribution q(x) envelops f(x) we choose a constant scaling factor, m > 1, such that mq(x) > f(x) for all x.
 
 m = $max\frac{f(x)}{q(x)}$
 
@@ -41,14 +41,14 @@ Watch this video: https://www.youtube.com/watch?v=rnBbYsysPaU
 We assume we want to generate a random variable X with cumulative distribution function (CDF) $F_X$. The inverse transform sampling algorithm is:
 
 1. Generate U ~ Unif(0,1)
-2. Let X = F_X^{-1}(U)
+2. Let X = $F_X^{-1}$(U)
 
 X will follow the distribution governed by the CDF $F_X$
 
 #### Discrete
 
 1. Generate U ~ Unif(0, 1)
-2. Determine the index k such that $\sum_{j=1}^{k-1} p_j \leq U < \sum_{j=1}^k p_j and return X = x_k$
+2. Determine the index k such that $\sum_{j=1}^{k-1} p_j \leq U < \sum_{j=1}^k p_j$ and return $X = x_k$
 
 ## Off-point
 
@@ -99,10 +99,10 @@ $Define: P(\theta_1, \theta_2, \theta_3)$
 
 $(\theta_1^0, \theta_2^0, \theta_3^0)$ ~ $\pi (...)$ where pi is some distribution that can sample $\theta...$
 
-for t in 1:T
-  $\theta_1^t ~ P(\theta_1 | \theta_2^{t-1}, \theta_3^{t-1})$
-  $\theta_2^t ~ P(\theta_2 | \theta_1^{t}, \theta_3^{t-1})$
-  $\theta_3^t ~ P(\theta_3 | \theta_1^{t}, \theta_2^{t})$
+for t in 1:T\newline
+\smallskip $\theta_1^t ~ P(\theta_1 | \theta_2^{t-1}, \theta_3^{t-1})$\newline
+\smallskip $\theta_2^t ~ P(\theta_2 | \theta_1^{t}, \theta_3^{t-1})$\newline
+\smallskip $\theta_3^t ~ P(\theta_3 | \theta_1^{t}, \theta_2^{t})$\newline
 
 - counting the number of occurrences of $(\theta_1, \theta_2, \theta_3)$ as your joint distribution
 
