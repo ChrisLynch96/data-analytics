@@ -100,9 +100,9 @@ $Define: P(\theta_1, \theta_2, \theta_3)$
 $(\theta_1^0, \theta_2^0, \theta_3^0)$ ~ $\pi (...)$ where pi is some distribution that can sample $\theta...$
 
 for t in 1:T\newline
-\smallskip $\theta_1^t ~ P(\theta_1 | \theta_2^{t-1}, \theta_3^{t-1})$\newline
-\smallskip $\theta_2^t ~ P(\theta_2 | \theta_1^{t}, \theta_3^{t-1})$\newline
-\smallskip $\theta_3^t ~ P(\theta_3 | \theta_1^{t}, \theta_2^{t})$\newline
+$\theta_1^t ~ P(\theta_1 | \theta_2^{t-1}, \theta_3^{t-1})$\newline
+$\theta_2^t ~ P(\theta_2 | \theta_1^{t}, \theta_3^{t-1})$\newline
+$\theta_3^t ~ P(\theta_3 | \theta_1^{t}, \theta_2^{t})$\newline
 
 - counting the number of occurrences of $(\theta_1, \theta_2, \theta_3)$ as your joint distribution
 
@@ -115,11 +115,11 @@ Problems:
 
 non parametric test. Does not need to follow a normal distribution.
 
-To test in disferences in the shape of two sample distributions
+To test in diferences in the shape of two sample distributions
 
 Compares the overall shape
 
-Requires Univariate, continous data
+Requires Univariate, continuous data
 
 D = the maximum absolute distance between the samples
 
