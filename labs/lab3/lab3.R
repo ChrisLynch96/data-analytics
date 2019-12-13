@@ -3,12 +3,17 @@ library(partykit)
 library(randomForest)
 
 rm(list = ls())
+setwd("~/workspace/github.com/ChrisLynch96/data-analytics/labs/lab3")
 
 Data <- read.csv("DT-Credit.csv", header=TRUE, sep= ";")
+
+str(Data)
 
 # Some data cleaning. changing some variables to factors and removing columns
 cols <- c(1:2, 4:10, 12:22, 24:32)
 Data[cols] <- lapply(Data[cols], factor)
+
+# Removing the observations column
 Data <- Data[-1]
 
 names(Data)
@@ -18,6 +23,7 @@ str(Data)
 model <-rpart(RESPONSE~., data=Data, control=rpart.control(minsplit=60, minbucket=30, maxdepth=4))
 
 plot(as.party(model))
+print(model)
 
 # Creating second model now purely pruning example
 model2 <- rpart(RESPONSE~., data=Data)

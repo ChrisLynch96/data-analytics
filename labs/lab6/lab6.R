@@ -4,9 +4,11 @@ setwd("~/workspace/github.com/ChrisLynch96/data-analytics/labs/lab6")
 rm(list = ls())
 Data <- read.csv("HS.csv", header=TRUE, sep= ",")
 
+str(Data)
 head(Data)
 summary(Data)
 
+# Using KNN is basically imputation by setting the missing value to the same as those observations which are most similar
 Impute1 <- kNN(Data, variable= "Genre", k=5)
 summary(Impute1)
 
