@@ -73,7 +73,7 @@ xerrors <- list()
 cps <- list()
 
 count = 1
-pdf("plots1.pdf", width = 600, height = 600)
+pdf("plots1.pdf", width = 9, height = 9)
 for(i in seq(length(sub_sets))) {
   for(j in seq(length(formulas))) {
     model <- rpart(formula = formulas[[j]], data = sub_sets[[i]], parms=list(split="information"), method = "class")
@@ -86,19 +86,3 @@ for(i in seq(length(sub_sets))) {
   }
 }
 dev.off()
-
-## Dustbin
-
-#
-#fx.noimp <- rpart(formula = formulas[[1]], data = data, parms=list(split="information"), method = "class")
-#fy.noimp <- rpart(formula = formulas[[2]], data = data, parms=list(split="information"), method = "class")
-#fxy.noimp <- rpart(formula = formulas[[3]], data = data, parms=list(split="information"), method = "class")
-
-## Model creation with imputation
-
-#fx.withimp <- rpart(formula = formulas[[1]], data = x.complete, parms=list(split="information"), method = "class")
-#fy.withimp <- rpart(formula = formulas[[2]], data = y.complete, parms=list(split="information"), method = "class")
-#fxy.withimp <- rpart(formula = formulas[[3]], data = full.complete, parms=list(split="information"), method = "class")
-
-
-
